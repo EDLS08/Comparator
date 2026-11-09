@@ -47,8 +47,6 @@ public class Main {
         produtos.add(p4);
         produtos.add(p5);
 
-        // Primeiro critério: quantidade em ordem crescente.
-        // Segundo critério: preço em ordem decrescente, em caso de empate.
         Comparator<Produto> comparador = Comparator
                 .comparingInt((Produto p) -> p.getQuantidade())
                 .thenComparing(
@@ -60,18 +58,5 @@ public class Main {
         for (Produto produto : produtos) {
             System.out.println(produto);
         }
-
-        /*
-         * Exemplo alternativo:
-         * preço em ordem decrescente e, em caso de empate,
-         * nome em ordem alfabética crescente.
-         *
-         * Comparator<Produto> comparadorAlternativo = Comparator
-         *         .comparingDouble((Produto p) -> p.getPreco())
-         *         .reversed()
-         *         .thenComparing(p -> p.getNome());
-         *
-         * produtos.sort(comparadorAlternativo);
-         */
     }
 }
